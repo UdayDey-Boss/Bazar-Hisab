@@ -1,38 +1,42 @@
-# 🛒 Bazar Hisab - Smart Shopping & Expense Tracker
+# 🛒 Bazar Hisab – Smart Shopping & Expense Tracker
 
 [![PHP](https://img.shields.io/badge/PHP-7.4+-blue.svg)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7+-orange.svg)](https://mysql.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://developer.mozilla.org)
 [![Voice](https://img.shields.io/badge/Voice-SpeechRecognition-brightgreen.svg)](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+[![Security](https://img.shields.io/badge/Security-Aware-red.svg)](https://owasp.org)
 
-**Bazar Hisab** is a fully functional MVC web application built with pure PHP, MySQL, AJAX, and Vanilla JavaScript. It is designed specifically for Bangladeshi families to manage shopping lists, track monthly expenses, receive expiry alerts, and **add items to the list using Bangla voice commands**—a unique feature not found in any standard expense tracker.
+**Bazar Hisab** is a full-stack MVC web application built from scratch using pure PHP, MySQL, AJAX, and Vanilla JavaScript. It is designed to help Bangladeshi families manage shopping lists, track monthly expenses, and reduce food waste—with a unique **Bangla/Banglish Voice Command** feature that sets it apart from typical expense trackers.
 
-🔊 *"Ami Alu, Dim, Tel ar Chal kinbo!"* – Just speak, and it adds to your list!
+🔊 *"Ami 2 kg aloo, 1 dozen dim, ar 2 litre tel kinbo"* – Just speak, and it's added!
 
 ---
 
-## ✨ Unique Features (Why this project stands out in 2026)
+## ✨ Key Features
 
-- **🎤 Bangla Voice Recognition**: Integrated Google's Web Speech API to allow users to dictate their shopping list in their native language.
-- **🌐 Multi-Language Support**: Full Bangla and English translation system built using PHP arrays and Cookies (no external libraries).
-- **⚡ Real-Time AJAX**: Add, delete, and buy items instantly without refreshing the page.
-- **📊 Automated Expense Tracking**: When an item is marked as "Bought", the expense is automatically logged into the database.
-- **⏳ Expiry Warning System**: Users receive alerts when items are about to expire, helping reduce food waste.
-- **🔒 Secure Authentication**: Password hashing (`password_hash`), Session management, and "Remember Me" (Cookies).
+- **🎤 Intelligent Voice Command** – Uses Web Speech API with a custom Bangla/Banglish parser to extract item names and quantities from unstructured speech.
+- **📊 Smart Expense Tracking** – Automatically logs expenses when items are marked as "Bought". View category-wise summaries and monthly trends.
+- **📄 One-Click PDF/Print Reports** – Generate professional, print-ready expense reports directly from the browser using CSS print media queries.
+- **⏳ Expiry Alerts** – Proactive 3-day expiry warnings to minimize household food waste.
+- **🔒 Security-First Design** – Implements bcrypt hashing, Prepared Statements (SQL Injection prevention), and XSS protection via `htmlspecialchars()`.
+- **⚡ Real-Time AJAX** – CRUD operations (Add, Edit, Delete, Buy) without page reloads, providing a seamless Single-Page-Application-like experience.
 
 ---
 
 ## 🧰 Technologies Used
 
-- **Backend**: PHP (Native), MySQLi
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Architecture**: Custom MVC (Model-View-Controller)
-- **Database**: MySQL (phpMyAdmin)
-- **APIs**: Web Speech API (Voice Recognition), XMLHttpRequest (AJAX), JSON
+| Category | Technologies |
+| :--- | :--- |
+| **Backend** | Pure PHP 7.4+, MySQLi (Prepared Statements) |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript, AJAX (XMLHttpRequest), JSON |
+| **Architecture** | Custom MVC (Model-View-Controller) |
+| **Database** | MySQL (phpMyAdmin) with Foreign Key constraints |
+| **APIs** | Web Speech API (Voice Recognition), JSON |
+| **Security** | bcrypt, Session Management, SQL Injection Prevention, XSS Protection |
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure (MVC)
 
 ```text
 bazar-hisab/
@@ -40,31 +44,31 @@ bazar-hisab/
 │   ├── css/
 │   │   └── style.css
 │   └── js/
-│       ├── script.js      (CRUD AJAX)
-│       ├── voice.js       (Speech Recognition)
-│       └── lang.js        (Language Switcher)
+│       ├── script.js      # CRUD AJAX
+│       ├── voice.js       # Speech Recognition
+│       └── lang.js        # Language Switcher (if any)
 ├── config/
-│   ├── database.php       (DB Connection)
-│   └── lang.php           (Translation Array)
+│   ├── database.php       # DB Connection
+│   └── lang.php           # Translation Array (Bangla/English)
 ├── controllers/
 │   ├── AuthController.php
 │   ├── DashboardController.php
 │   ├── ListController.php
 │   ├── ExpenseController.php
 │   ├── LanguageController.php
-│   └── VoiceController.php (Parses spoken text)
+│   └── VoiceController.php # Bangla/Banglish parser
 ├── models/
 │   ├── UserModel.php
 │   ├── ListModel.php
 │   └── ExpenseModel.php
 ├── views/
-│   ├── auth/              (Login/Register)
-│   ├── partials/          (Header)
+│   ├── auth/              # Login / Register
+│   ├── partials/          # Header / Footer
 │   ├── dashboard.php
 │   ├── list.php
 │   └── expenses.php
-├── index.php              (Main Router)
-└── .htaccess              (URL Rewriting)
+├── index.php              # Main Router
+└── .htaccess              # URL Rewriting
 
 
 ## 🗄️ Database Tables (SQL Schema)
