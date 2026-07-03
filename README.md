@@ -1,70 +1,98 @@
-# 🛒 Bazar Hisab - Smart Shopping & Expense Tracker
+# 🛒 Bazar Hisab – Smart Shopping & Expense Tracker
 
 [![PHP](https://img.shields.io/badge/PHP-7.4+-blue.svg)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7+-orange.svg)](https://mysql.com)
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow.svg)](https://developer.mozilla.org)
 [![Voice](https://img.shields.io/badge/Voice-SpeechRecognition-brightgreen.svg)](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+[![Security](https://img.shields.io/badge/Security-Aware-red.svg)](https://owasp.org)
 
-**Bazar Hisab** is a fully functional MVC web application built with pure PHP, MySQL, AJAX, and Vanilla JavaScript. It is designed specifically for Bangladeshi families to manage shopping lists, track monthly expenses, receive expiry alerts, and **add items to the list using Bangla voice commands**—a unique feature not found in any standard expense tracker.
+**Bazar Hisab** is a full-stack MVC web application built from scratch using **pure PHP, MySQL, AJAX, and Vanilla JavaScript**. It is specifically designed for Bangladeshi households to digitize shopping list management, track monthly expenses, and reduce food waste through proactive alerts. 
 
-🔊 *"Ami Alu, Dim, Tel ar Chal kinbo!"* – Just speak, and it adds to your list!
+What makes it truly unique is its **intelligent Voice Command system** that understands Bangla and Banglish speech—a feature rarely found in academic or personal projects.
+
+🔊 *"Ami 2 kg aloo, 1 dozen dim, ar 2 litre tel kinbo"* – Just speak, and it's added!
 
 ---
 
-## ✨ Unique Features (Why this project stands out in 2026)
+## ✨ Key Features (Why This Project Stands Out)
 
-- **🎤 Bangla Voice Recognition**: Integrated Google's Web Speech API to allow users to dictate their shopping list in their native language.
-- **🌐 Multi-Language Support**: Full Bangla and English translation system built using PHP arrays and Cookies (no external libraries).
-- **⚡ Real-Time AJAX**: Add, delete, and buy items instantly without refreshing the page.
-- **📊 Automated Expense Tracking**: When an item is marked as "Bought", the expense is automatically logged into the database.
-- **⏳ Expiry Warning System**: Users receive alerts when items are about to expire, helping reduce food waste.
-- **🔒 Secure Authentication**: Password hashing (`password_hash`), Session management, and "Remember Me" (Cookies).
+### 🎤 Intelligent Voice Command System
+- Integrated the **Web Speech API** with a custom **Bangla/Banglish parsing algorithm**.
+- Extracts both **item names and quantities** from unstructured voice inputs (e.g., "aloo 2 kg", "ডিম ১ ডজন", "আমি ৩টা পেঁপে নিচি").
+- Makes the app **accessible to non-tech-savvy users**, including elderly family members or those with limited typing ability.
+- A **standout feature** rarely implemented in academic or personal projects, demonstrating proficiency in **API integration, string manipulation, and localization**.
+
+### 📄 One-Click PDF & Print Reports
+- Built a **business-ready reporting module** using **CSS print media queries**.
+- Allows users to generate **professional, print-ready expense reports** with a single click.
+- Perfect for maintaining **physical records, sharing with family members, or submitting to financial advisors**.
+- Eliminates the need for **third-party tools or manual copy-pasting**.
+
+### 📊 Smart Expense Tracking & Analytics
+- Automatically logs expenses when items are marked as "**Bought**".
+- Generates **real-time category-wise expense summaries** (Vegetables, Fish & Meat, Groceries, Fruits, Dairy).
+- Interactive dashboard with **monthly spending trends** and **proactive 3-day expiry alerts** to minimize household food waste.
+- Helps users answer critical questions: *"Where did my money go this month?"* and *"What's about to expire?"*
+
+### ⚡ Real-Time AJAX Operations
+- All CRUD operations (**Add, Edit, Delete, Buy**) happen **without full page reloads**.
+- Built using **Vanilla JavaScript, XMLHttpRequest, and JSON**.
+- Provides a **seamless, app-like user experience** that feels modern and responsive.
+
+### 🔒 Security-First Design
+- **Password Security**: bcrypt hashing for safe password storage.
+- **SQL Injection Prevention**: All database queries use **Prepared Statements** with parameterized queries.
+- **XSS Protection**: All user-generated outputs are escaped using `htmlspecialchars()`.
+- **Session Management**: Secure PHP Sessions with cookie-based "Remember Me" functionality.
+- Demonstrates a **strong commitment to writing production-quality, secure code**—a trait highly valued in professional environments.
 
 ---
 
 ## 🧰 Technologies Used
 
-- **Backend**: PHP (Native), MySQLi
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript
-- **Architecture**: Custom MVC (Model-View-Controller)
-- **Database**: MySQL (phpMyAdmin)
-- **APIs**: Web Speech API (Voice Recognition), XMLHttpRequest (AJAX), JSON
+| Category | Technologies |
+| :--- | :--- |
+| **Backend** | Pure PHP 7.4+, MySQLi (Prepared Statements) |
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript, AJAX (XMLHttpRequest), JSON |
+| **Architecture** | Custom MVC (Model-View-Controller) without any frameworks |
+| **Database** | MySQL with Foreign Key constraints and optimized JOIN queries |
+| **APIs** | Web Speech API (Voice Recognition), JSON |
+| **Security** | bcrypt hashing, Session Management, Prepared Statements, XSS Prevention |
+| **Server** | XAMPP (Apache, MySQL) |
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure (MVC)
 
 ```text
 bazar-hisab/
 ├── assets/
 │   ├── css/
-│   │   └── style.css
+│   │   └── style.css          # Custom styling
 │   └── js/
-│       ├── script.js      (CRUD AJAX)
-│       ├── voice.js       (Speech Recognition)
-│       └── lang.js        (Language Switcher)
+│       ├── script.js          # CRUD AJAX operations
+│       └── voice.js           # Speech Recognition & parsing
 ├── config/
-│   ├── database.php       (DB Connection)
-│   └── lang.php           (Translation Array)
+│   ├── database.php           # Database connection
+│   └── lang.php               # Multi-language support (Bangla/English)
 ├── controllers/
-│   ├── AuthController.php
+│   ├── AuthController.php     # Login, Register, Logout
 │   ├── DashboardController.php
-│   ├── ListController.php
-│   ├── ExpenseController.php
-│   ├── LanguageController.php
-│   └── VoiceController.php (Parses spoken text)
+│   ├── ListController.php     # Shopping list CRUD
+│   ├── ExpenseController.php  # Expense reporting
+│   └── VoiceController.php    # Voice input parsing algorithm
 ├── models/
 │   ├── UserModel.php
 │   ├── ListModel.php
 │   └── ExpenseModel.php
 ├── views/
-│   ├── auth/              (Login/Register)
-│   ├── partials/          (Header)
+│   ├── auth/                  # Login / Register pages
+│   ├── partials/              # Reusable components
 │   ├── dashboard.php
-│   ├── list.php
-│   └── expenses.php
-├── index.php              (Main Router)
-└── .htaccess              (URL Rewriting)
+│   ├── list.php               # Shopping list with Buy/Edit/Delete
+│   └── expenses.php           # Expense report with PDF/Print
+├── index.php                  # Main router
+└── .htaccess                  # URL rewriting
 
 
 ## 🗄️ Database Tables (SQL Schema)
