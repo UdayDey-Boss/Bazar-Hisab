@@ -6,9 +6,11 @@
 [![Voice](https://img.shields.io/badge/Voice-SpeechRecognition-brightgreen.svg)](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
 [![Security](https://img.shields.io/badge/Security-Aware-red.svg)](https://owasp.org)
 
-**Bazar Hisab** is a full-stack MVC web application built from scratch using **pure PHP, MySQL, AJAX, and Vanilla JavaScript**. It is specifically designed for Bangladeshi households to digitize shopping list management, track monthly expenses, and reduce food waste through proactive alerts. 
+## Overview
 
-What makes it truly unique is its **intelligent Voice Command system** that understands Bangla and Banglish speech—a feature rarely found in academic or personal projects.
+Bazar Hisab is a full-stack MVC web application built using PHP, MySQL, AJAX, and Vanilla JavaScript to simplify household shopping and expense management. The application enables users to manage shopping lists, track expenses, monitor product expiry, and generate reports through an intuitive interface.
+
+The project includes a voice-based shopping list feature using the Web Speech API, supporting Bangla and Banglish commands for hands-free item entry.
 
 🔊 *"Ami 2 kg aloo, 1 dozen dim, ar 2 litre tel kinbo"* – Just speak, and it's added!
 
@@ -128,6 +130,32 @@ CREATE TABLE expenses (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (item_id) REFERENCES shopping_list(id) ON DELETE CASCADE
 );
+
+## Screenshots
+
+
+
+
+
+## Future Improvements
+
+- Email notifications
+- Barcode scanning
+- OCR for receipts
+- Progressive Web App (PWA)
+- Budget forecasting
+
+## Learning Outcomes
+
+Through this project I gained practical experience in:
+
+- MVC Architecture
+- REST-like application design
+- AJAX
+- PHP Session Management
+- MySQL Database Design
+- Web Security
+- API Integration
 
 ## 📬 Let's Connect
 
