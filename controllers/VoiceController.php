@@ -2,8 +2,7 @@
 // controllers/VoiceController.php
 require_once 'models/ListModel.php';
 
-// কিছু শেয়ার্ড হোস্টিং এ mbstring extension enabled থাকে না, যার ফলে mb_strlen()
-// ব্যবহার করলে fatal error হতে পারে। সেটা এড়াতে এই polyfill।
+
 if (!function_exists('mb_strlen')) {
     function mb_strlen($str, $encoding = 'UTF-8') {
         return count(preg_split('//u', $str, -1, PREG_SPLIT_NO_EMPTY));
@@ -60,9 +59,7 @@ class VoiceController {
         }
     }
 
-    /**
-     * বাংলা সংখ্যা (০-৯) কে ইংরেজি সংখ্যা (0-9) তে কনভার্ট করে।
-     * এটা ছাড়া \d regex দিয়ে বাংলা ডিজিট ধরা যায় না।
+   
      */
     private function convertBengaliNumber($text) {
         $bn = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];

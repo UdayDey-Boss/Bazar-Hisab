@@ -1,39 +1,34 @@
-<?php
-// views/auth/register.php
-require_once 'config/lang.php';
-?>
 <!DOCTYPE html>
-<html lang="<?php echo current_lang(); ?>">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo __('register'); ?> - <?php echo __('app_name'); ?></title>
+    <title>Register - Bazar Hisab</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
         <div class="auth-box">
-            <h2><?php echo __('app_name'); ?></h2>
-            <h3><?php echo __('register'); ?></h3>
+            <h2>🛒 Bazar Hisab</h2>
+            <h3>Create New Account</h3>
 
             <form action="index.php?action=register" method="POST">
                 <div class="form-group">
-                    <label><?php echo __('your_name'); ?></label>
+                    <label>Full Name</label>
                     <input type="text" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label><?php echo __('email'); ?></label>
+                    <label>Email</label>
                     <input type="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label><?php echo __('password'); ?></label>
+                    <label>Password</label>
                     <input type="password" name="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary"><?php echo __('register'); ?></button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </form>
-            <p><?php echo __('have_account'); ?> <a href="index.php?action=login"><?php echo __('login_now'); ?></a></p>
+            <p>Already have an account? <a href="index.php?action=login">Login</a></p>
         </div>
     </div>
-    <script src="assets/js/lang.js"></script>
 </body>
 </html>
