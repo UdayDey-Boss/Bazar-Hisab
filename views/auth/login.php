@@ -1,7 +1,3 @@
-<?php
-// views/auth/login.php
-require_once 'config/lang.php';
-?>
 <!DOCTYPE html>
 <html lang="<?php echo current_lang(); ?>">
 <head>
